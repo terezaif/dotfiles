@@ -24,7 +24,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 
 " auto complete and other insert mode completions, like snippets
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+" Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+
 " auto completion for go
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 " ES2015 code snippets (Optional)
@@ -42,7 +45,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'benmills/vimux'
 
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -284,15 +287,6 @@ let g:go_highlight_types = 1
 let g:go_auto_sameids = 1
 " }}}
 " {{{ javascript
-function! neoformat#formatters#javascript#prettiereslint() abort
-    return {
-        \ 'exe': 'prettier-eslint',
-        \ 'args': ['--stdin', '--single-quote true'],
-        \ 'stdin': 1,
-        \ }
-endfunction
-let g:neoformat_enabled_javascript = ['prettiereslint']
-autocmd FileType javascript set fdm=syntax
 " }}}
 " rust {{{
 let g:rustfmt_autosave = 1
